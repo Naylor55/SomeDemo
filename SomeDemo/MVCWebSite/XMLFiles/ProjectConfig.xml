@@ -91,7 +91,7 @@
     <Developers Id="10005">
       <add Token="auth2/access_token" Refresh_token="auth2/refresh_token" Get_pools="product/getPageNum" Sku="product/getSku" Detail="product/getDetail" State="product/skuState" Images="product/skuImage" Provinces="area/getProvince" 
          Cities="area/getCity" County="area/getCounty" Town="area/getTown"  />
-    </Developers>-->
+    </Developers>
 
 </TPI_Projects>
 
