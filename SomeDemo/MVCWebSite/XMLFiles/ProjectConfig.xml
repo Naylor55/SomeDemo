@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TPI_Projects>
+    <ProjectList projectId="1" projectName="总后项目" DevelopersName="阳光公采" DevelopersId="10001" method="被动" IsParamDate="0"  />
+    <ProjectList projectId="2"  projectName="北京市采" DevelopersName="中电指数" DevelopersId="10002" method="被动" IsParamDate="1" />
+    <ProjectList projectId="4"  projectName="蜀山商城" DevelopersName="阳光公采" DevelopersId="10001" method="被动" IsParamDate="0" />
+    <ProjectList projectId="5"  projectName="蚌埠商城" DevelopersName="阳光公采" DevelopersId="10001" method="被动" IsParamDate="0" />
+    <ProjectList projectId="6"  projectName="德阳商城" DevelopersName="阳光公采" DevelopersId="10001" method="被动" IsParamDate="0" />
+    <ProjectList projectId="7"  projectName="合肥商城" DevelopersName="国泰新点" DevelopersId="10003" method="被动" IsParamDate="1" />
+    <ProjectList projectId="8"  projectName="无锡商城" DevelopersName="阳光公采" DevelopersId="10001" method="被动" IsParamDate="0" />
+    <ProjectList projectId="9"  projectName="河南商城" DevelopersName="政府采购电商" DevelopersId="10004" method="主动" IsParamDate="0" />
+    <ProjectList projectId="10"  projectName="包头电子商城" DevelopersName="深圳一诺" DevelopersId="10005" method="被动" IsParamDate="0" />
+    <ProjectList projectId="11"  projectName="湘西商城" DevelopersName="天津先特" DevelopersId="10001" method="被动" IsParamDate="0" />
+    <ProjectList projectId="12"  projectName="天津商城" DevelopersName="阳光公采" DevelopersId="10001" method="被动" IsParamDate="0" />
+    <ProjectList projectId="13"  projectName="海南政采商城" DevelopersName="阳光公采" DevelopersId="10001" method="被动" IsParamDate="0" />
+    <ProjectList projectId="14"  projectName="中航金网" DevelopersName="阳光公采" DevelopersId="10001" method="被动" IsParamDate="0" />
+    <ProjectList projectId="15"  projectName="苏州商城" DevelopersName="阳光公采" DevelopersId="10001" method="被动" IsParamDate="0" />
+    <ProjectList projectId="16"  projectName="广东省电子商城" DevelopersName="阳光公采" DevelopersId="10001" method="被动" IsParamDate="0" />
+    <ProjectList projectId="17"  projectName="长沙电子商城" DevelopersName="用友电商平台" DevelopersId="10006" method="主动" IsParamDate="0" />
+    <ProjectList projectId="18"  projectName="国网商城" DevelopersName="国网商城(企购平台)" DevelopersId="10007" method="主动" IsParamDate="0" />
+    <ProjectList projectId="19"  projectName="扬州商城" DevelopersName="富深" DevelopersId="10008" method="主动" IsParamDate="1"  />
+    <ProjectList projectId="20"  projectName="湖北政采商城" DevelopersName="阳光公采" DevelopersId="10001" method="被动" IsParamDate="0" />
+    <ProjectList projectId="21"  projectName="政采云" DevelopersName="江苏省财政厅网上商城" DevelopersId="10009" method="主动" IsParamDate="0" />
+    <ProjectList projectId="23"  projectName="连云港商城" DevelopersName="阳光公采" DevelopersId="10001" method="被动" IsParamDate="0" />
+    <ProjectList projectId="25"  projectName="北陆商城" DevelopersName="北陆" DevelopersId="10010" method="主动" IsParamDate="0" />
+  <ProjectAction DevelopersId="10001">
+    <interface name="授权获取Access Token" value="Token" Token="auth2/access_token" Param="timestamp|username|password|sign"/>
+    <interface name="获取品目池接口" value="Get_pools" Get_pools="product/get_pools" Param="token" />
+    <interface name="获取商品编号SKU接口" value="Sku" Sku="product/skus" Param="token|catalog_id" />
+    <interface name="商品详情接口" value="Detail" Detail="product/detail" Param="token|sku" />
+    <interface name="上下架状态接口" value="State" State="product/shelf_states" Param="token|sku" />
+    <interface name="图片接口"  value="Images" Images="product/images" Param="token|sku"/>
+    <interface name="商品好评度接口" value="Ratings" Ratings="product/ratings"  Param="token|sku"/>
+    <interface name="价格接口" value="Prices" Prices="product/prices" Param="token|sku" />
+    <interface name="获取一级地址" value="Provinces" Provinces="area/provinces" Param="token" />
+    <interface name="获取二级地址" value="Cities" Cities="area/cities" Param="token|id" />
+    <interface name="获取三级地址" value="County" County="area/getCounty"  Param="token|id" />
+    <interface name="库存接口" value="Stocks" Stocks="product/stocks"  Param="token|sku|area"/>
+    <interface name="预下订单接口" value="Submit"  Submit="order/submit" 
+               Param="token|yggc_order|sku|name|province|city|county|address|zip|phone|mobile|email|remark|invoice_title|payment|order_price|freight" />
+    <interface name="确认订单接口" value="Confirm" Confirm="order/confirm" Param="token|order_id"/>
+    <interface name="取消订单接口" value="Cancel" Cancel="order/cancel" Param="token|order_id" />
+    <interface name="查询贵方订单信息接口" value="Select" Select="order/select" Param="token|order_id"/>
+    <interface name="退换货接口" value="Return"  Return="order/ReturnOrder" Param="token|order_id|skus"/>
+    <interface name="物流接口" value="Track" Track="order/GetLogisticsState" Param="token|order_id" />
+    <interface name="对账接口" value="Checkr"  Checkr="order/checkr" Param="token|bdate|edate"/>
+    <interface name="配件库接口" value="Fittings" Fittings="product/get_fittings" Param="token|cityId"/>
+  </ProjectAction>
+  
+  <ProjectAction DevelopersId="10002">
+    <interface name="获取token令牌"  value="Token" Token="ecservice/getAccessToken" Param="appKey|appSecret|v"/>
+    <interface name="获取品类(目录)接口" value="Get_pools" Get_pools="ecservice/getProductCategory" Param="appKey|accessToken|v"  />
+    <interface name="获取商品池接口" value="Sku"  Sku="ecservice/getProductPool"  Param="appKey|accessToken|v|categoryId" />
+    <interface name="商品详情接口" value="Detail" Detail="ecservice/getProductDetail" Param="appKey|accessToken|v|sku"/>
+    <interface name="图片接口" value="Images" Images="ecservice/getProductImage" Param="appKey|accessToken|v|sku"/>
+    <interface name="库存接口" value="Stocks" Stocks="ecservice/getProductInventory"  Param="accessToken|appKey|sku|v|num|cityId|countyId"/>
+    <interface name="商品库存状态批量查询接口" value="Stocks"  StockBatch="ecservice/bathQueryInventoryStatus"  Param="accessToken|appKey|v|skus|cityId"/>
+    <interface name="上下架状态接口" value="State"  State="ecservice/getProductOnShelvesInfo" Param="accessToken|appKey|v|sku " />
+    <interface name="获取商品易购价格接口" value="Prices" Price="ecservice/queryCountPrice" Param="appKey|accessToken|v|sku|cityId" />
+    <interface name="创建订单接口" value="Submit" Submit="ecservice/createOrder" Param="appKey|accessToken|v|sign|tradeNO|sku|skuId|num|price|name|provinceId|cityId|countyId|townId|address|phone|mobile|email|remark|invoiceState|invoiceType|companyName|invoiceContent|amount|freight|payment|reviewId" />
+    <interface name="退换货接口" value="Return"  Return="ecservice/cancelOrder" Param="appKey|accessToken|v|sign|orderId|sku|skuId|num"/>
+    <interface name="获取订单物流接口" value="Track" Track="ecservice/getOrderLogisticsStatus" Param="appKey|accessToken|v|orderId|skuId" />
+    <interface name="获取订单状态接口" value="Select" Select="ecservice/getOrderStatus" Param="appKey|accessToken|orderId "/>
+    <interface name="查询区信息接口" value="County" County="ecservice/getDistrictInfo"  Param="appKey|accessToken|v|cityId" />
+    <interface name="查询镇信息接口" value="Town"  Town="ecservice/getTownInfo"  Param="appKey|accessToken|v|cityId|countyId" />
+  </ProjectAction>
+
+  <ProjectAction DevelopersId="10003">
+    <interface name="获取接口令牌"  value="Token" Token="ecservice/getAccessToken" Param="appKey|appSecret"/>
+    <interface name="获取品类(目录)接口" value="Get_pools" Get_pools="ecservice/getProductCategory" Param="appKey|accessToken"  />
+    <interface name="获取商品池接口" value="Sku"  Sku="ecservice/getProductPool" Param="appKey|accessToken|categoryId"/>
+    <interface name="商品详情接口" value="Detail" Detail="ecservice/getProductDetail"  Param="appKey|accessToken|sku" />
+    <interface name="商品好评度接口" value="Ratings"  Ratings="ecservice/getProductReview" Param="appKey|accessToken|skuId"/>
+    <interface name="图片接口"  value="Images" Images="ecservice/getProductImage" Param="appKey|accessToken|sku"/>
+    <interface name="上下架状态接口" value="State"  State="ecservice/getProductOnShelvesInfo" Param="accessToken|appKey|sku " />
+    <interface name="获取一级地址" value="Provinces" Provinces="ecservice/getProvinceInfo" Param="appKey|accessToken" />
+    <interface name="获取二级地址" value="Cities" Cities="ecservice/getCityInfo" Param="appKey|accessToken|provinceId" />
+    <interface name="获取三级地址" value="County" County="ecservice/getDistrictInfo"  Param="appKey|accessToken|cityId" />
+    <interface name="获取四级地址" value="Town"  Town="ecservice/getTownInfo"  Param="appKey|accessToken|cityId|countyId" />
+    <interface name="库存接口" value="Stocks" Stocks="ecservice/getProductInventory"  Param="accessToken|appKey |sku|num|cityId|countyId"/>
+    <interface name="批量查询库存接口" value="Stocks"  StockBatch="ecservice/bathQueryInventoryStatus"  Param="accessToken|appKey|sku|cityId"/>
+    <interface name="价格接口" value="Prices" Price="ecservice/queryCountPrice" Param="appKey|accessToken|sku|cityId" />
+    <interface name="预下订单接口" value="Submit" Submit="ecservice/createOrder" Param="appKey|accessToken|tradeNO|skuId|num|price|name|provinceId|cityId|countyId|townId|address|phone|mobile|email|remark|invoiceState|invoiceType|companyName|invoiceContent|amount|freight|payment" />
+    <interface name="退换货接口" value="Return"  Return="ecservice/cancelOrder" Param="appKey|accessToken|orderId|skuId|num"/>
+    <interface name="物流接口" value="Track" Track="ecservice/getOrderLogisticsStatus" Param="appKey|accessToken|orderId|skuId" />
+    <interface name="查询贵方订单信息接口" value="Select" Select="ecservice/getOrderStatus" Param="appKey|accessToken|orderId "/>
+  </ProjectAction>
+
+
+    <Developers Id="10004">
+    </Developers>
+    <Developers Id="10005">
+      <add Token="auth2/access_token" Refresh_token="auth2/refresh_token" Get_pools="product/getPageNum" Sku="product/getSku" Detail="product/getDetail" State="product/skuState" Images="product/skuImage" Provinces="area/getProvince" 
+         Cities="area/getCity" County="area/getCounty" Town="area/getTown"  />
+    </Developers>-->
+
+</TPI_Projects>
+
+
+
+
+
