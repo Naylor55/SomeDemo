@@ -9,6 +9,39 @@
     <p><a class="btn btn-default" href="/Home/ReadXml">读取XML文件 &raquo;</a></p>
     <p><a class="btn btn-default" href="/Home/ReadXmlAgain">再次读取XML文件 &raquo;</a></p>
     <p><a class="btn btn-default" href="javascript:void(0)" onclick="ReadXML()">Ajax读取XML文件 &raquo;</a></p>
+    <p>
+        <select id="editable-select">
+            <option>Alfa Romeo</option>
+            <option>Audi</option>
+            <option>中国人民银行</option>
+            <option>中国人民</option>
+            <option>中国</option>
+            <option>BMW</option>
+        </select>
+    </p>
+    <div style="position:relative;">
+        <span style="margin-left:100px;width:18px;overflow:hidden;">
+            <select style="width:118px;margin-left:-100px;" onchange="this.parentNode.nextSibling.value=this.options[this.selectedIndex].text;">
+                <option value="-1">请选择...</option>
+                <option value="1">吾顷仰</option>
+            </select>
+        </span>
+        <input type="text" style="width:100px;position:absolute;left:0px;" value="请选择...">
+    </div>
+    <p>
+        <select name="markcode" onchange="editable(this);" class="TaxRate">
+            <option value="3">3%</option>
+            <option value="5">5%</option>
+            <option value="6">6%</option>
+            <option value="11">11%</option>
+            <option value="13">13%</option>
+            <option value="17">17%</option>
+            <option value="">请输入</option>
+        </select>
+    </p>
+    <br />
+
+    <a href="/Home/VisitWebServices">访问WebServices服务</a>
 </div>
 
 <div class="row">
@@ -33,7 +66,8 @@
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
-
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Plugin/jquery.editable-select.js"></script>
 <script>
     function ReadXML() {
         $.ajax({
@@ -48,4 +82,62 @@
             }
         })
     }
+
+
+    $('#editable-select').editableSelect({
+        effects: 'slide'
+    });
+
+    function editable(select1) {
+
+        if (select1.value == "") {
+
+            var newvalue = prompt("请输入", "其他");
+
+            if (newvalue) {
+
+                addSelected(select1, newvalue, newvalue);
+
+            }
+
+        }
+
+    }
+
+    function addSelected(fld1, value1, text1) {
+
+        if (document.all) {
+
+            var Opt = fld1.document.createElement("OPTION");
+
+            Opt.text = text1;
+
+            Opt.value = value1;
+
+            fld1.options.add(Opt);
+
+            Opt.selected = true;
+
+        } else {
+
+            var Opt = new Option(text1, value1, false, false);
+
+            Opt.selected = true;
+
+            fld1.options[fld1.options.length] = Opt;
+        }
+    }
+
+    //判断数组是否重复
+    $(function () {
+        var ary = new Array("111", "22", "33", "111","222","56656","22","33");
+        var nary = ary.sort();
+        for (var i = 0; i < ary.length; i++) {
+            if (nary[i] == nary[i + 1]) {
+                alert("数组重复内容：" + nary[i]);
+            }
+        }
+    })
+
+
 </script>

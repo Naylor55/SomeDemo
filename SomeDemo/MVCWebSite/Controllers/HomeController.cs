@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using MVCWebSite.PublicClass;
 
 namespace MVCWebSite.Controllers
 {
@@ -78,5 +81,22 @@ namespace MVCWebSite.Controllers
 
             return View();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public string VisitWebServices()
+        {
+            HttpItem hi = new PublicClass.HttpItem();
+            hi.URL = "http://localhost:47374/Home/Demo";
+            hi.Method = "Post";
+            HttpHelper hh = new PublicClass.HttpHelper();
+            HttpResult hr = new PublicClass.HttpResult();
+            hr = hh.GetHtml(hi);
+            string html = hr.Html;
+            return "";
+        }
+
     }
 }
