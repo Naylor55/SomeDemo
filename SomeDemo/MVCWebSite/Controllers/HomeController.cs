@@ -98,5 +98,24 @@ namespace MVCWebSite.Controllers
             return "";
         }
 
+        [HttpPost]
+        public JsonResult SomeData()
+        {
+            JsonResult json = new JsonResult();
+            if (Request.Form.Count > 0)
+            {
+                int param = Convert.ToInt32(Request.Form["param"].ToString());
+                json.Data = new { cml = "成功获取到前台传递过来的数据" + param };
+            }
+            return json;
+        }
+
+        public void CheckDouble()
+        {
+            string str = "0.03";
+            double dou = Convert.ToDouble(str);
+        }
+
+
     }
 }

@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WebShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="c_ID" />
+          </Key>
+          <Property Name="c_ID" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="c_Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="c_TrueName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="c_Gender" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="c_Birth" Type="datetime" Nullable="false" />
+          <Property Name="c_CardID" Type="varchar" MaxLength="18" Nullable="false" />
+          <Property Name="c_Address" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="c_Postcode" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="c_Mobile" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="c_Phone" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="c_Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="c_Password" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="c_SafeCode" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="c_Question" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="c_Answer" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="c_Type" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="e_ID" />
+          </Key>
+          <Property Name="e_ID" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="e_Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="e_Gender" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="e_Birth" Type="datetime" Nullable="false" />
+          <Property Name="e_Address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="e_Postcode" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="e_Mobile" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="e_Phone" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="e_Email" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Goods">
+          <Key>
+            <PropertyRef Name="g_ID" />
+          </Key>
+          <Property Name="g_ID" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="g_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="t_ID" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="g_Price" Type="float" Nullable="false" />
+          <Property Name="g_Discount" Type="float" Nullable="false" />
+          <Property Name="g_Number" Type="smallint" Nullable="false" />
+          <Property Name="g_ProduceDate" Type="datetime" Nullable="false" />
+          <Property Name="g_Image" Type="varchar" MaxLength="100" />
+          <Property Name="g_Status" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="g_Description" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="d_ID" />
+          </Key>
+          <Property Name="d_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="o_ID" Type="char" MaxLength="14" Nullable="false" />
+          <Property Name="g_ID" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="d_Price" Type="float" Nullable="false" />
+          <Property Name="d_Number" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="o_ID" />
+          </Key>
+          <Property Name="o_ID" Type="char" MaxLength="14" Nullable="false" />
+          <Property Name="c_ID" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="o_Date" Type="datetime" Nullable="false" />
+          <Property Name="o_Sum" Type="float" Nullable="false" />
+          <Property Name="e_ID" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="o_SendMode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="p_Id" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="o_Status" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="p_Id" />
+          </Key>
+          <Property Name="p_Id" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="p_Mode" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="p_Remark" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Types">
+          <Key>
+            <PropertyRef Name="t_ID" />
+          </Key>
+          <Property Name="t_ID" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="t_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="t_Description" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="u_ID" />
+          </Key>
+          <Property Name="u_ID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="u_Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="u_Type" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="u_Password" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Goods__t_ID__0BC6C43E">
+          <End Role="Types" Type="Self.Types" Multiplicity="1" />
+          <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Types">
+              <PropertyRef Name="t_ID" />
+            </Principal>
+            <Dependent Role="Goods">
+              <PropertyRef Name="t_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderDetai__g_ID__1FCDBCEB">
+          <End Role="Goods" Type="Self.Goods" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goods">
+              <PropertyRef Name="g_ID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="g_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderDetai__o_ID__1ED998B2">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="o_ID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="o_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__c_ID__182C9B23">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="c_ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="c_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__e_ID__1920BF5C">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="e_ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="e_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__p_Id__1A14E395">
+          <End Role="Payments" Type="Self.Payments" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payments">
+              <PropertyRef Name="p_Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="p_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WebShopModelStoreContainer">
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Goods" EntityType="Self.Goods" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payments" EntityType="Self.Payments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Types" EntityType="Self.Types" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Goods__t_ID__0BC6C43E" Association="Self.FK__Goods__t_ID__0BC6C43E">
+            <End Role="Types" EntitySet="Types" />
+            <End Role="Goods" EntitySet="Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderDetai__g_ID__1FCDBCEB" Association="Self.FK__OrderDetai__g_ID__1FCDBCEB">
+            <End Role="Goods" EntitySet="Goods" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderDetai__o_ID__1ED998B2" Association="Self.FK__OrderDetai__o_ID__1ED998B2">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__c_ID__182C9B23" Association="Self.FK__Orders__c_ID__182C9B23">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__e_ID__1920BF5C" Association="Self.FK__Orders__e_ID__1920BF5C">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__p_Id__1A14E395" Association="Self.FK__Orders__p_Id__1A14E395">
+            <End Role="Payments" EntitySet="Payments" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WebShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="c_ID" />
+          </Key>
+          <Property Name="c_ID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="c_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="c_TrueName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="c_Gender" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="c_Birth" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="c_CardID" Type="String" MaxLength="18" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="c_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="c_Postcode" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="c_Mobile" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="c_Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="c_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="c_Password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="c_SafeCode" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="c_Question" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="c_Answer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="c_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__c_ID__182C9B23" FromRole="Customers" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="e_ID" />
+          </Key>
+          <Property Name="e_ID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="e_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="e_Gender" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="e_Birth" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="e_Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="e_Postcode" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="e_Mobile" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="e_Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="e_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__e_ID__1920BF5C" FromRole="Employees" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Goods">
+          <Key>
+            <PropertyRef Name="g_ID" />
+          </Key>
+          <Property Name="g_ID" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="g_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="t_ID" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="g_Price" Type="Double" Nullable="false" />
+          <Property Name="g_Discount" Type="Double" Nullable="false" />
+          <Property Name="g_Number" Type="Int16" Nullable="false" />
+          <Property Name="g_ProduceDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="g_Image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="g_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="g_Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Types" Relationship="Self.FK__Goods__t_ID__0BC6C43E" FromRole="Goods" ToRole="Types" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDetai__g_ID__1FCDBCEB" FromRole="Goods" ToRole="OrderDetails" />
+        </EntityType>
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="d_ID" />
+          </Key>
+          <Property Name="d_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="o_ID" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="g_ID" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="d_Price" Type="Double" Nullable="false" />
+          <Property Name="d_Number" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="Goods" Relationship="Self.FK__OrderDetai__g_ID__1FCDBCEB" FromRole="OrderDetails" ToRole="Goods" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__OrderDetai__o_ID__1ED998B2" FromRole="OrderDetails" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="o_ID" />
+          </Key>
+          <Property Name="o_ID" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="c_ID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="o_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="o_Sum" Type="Double" Nullable="false" />
+          <Property Name="e_ID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="o_SendMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="p_Id" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="o_Status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK__Orders__c_ID__182C9B23" FromRole="Orders" ToRole="Customers" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK__Orders__e_ID__1920BF5C" FromRole="Orders" ToRole="Employees" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDetai__o_ID__1ED998B2" FromRole="Orders" ToRole="OrderDetails" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK__Orders__p_Id__1A14E395" FromRole="Orders" ToRole="Payments" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="p_Id" />
+          </Key>
+          <Property Name="p_Id" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="p_Mode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="p_Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__p_Id__1A14E395" FromRole="Payments" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Types">
+          <Key>
+            <PropertyRef Name="t_ID" />
+          </Key>
+          <Property Name="t_ID" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="t_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="t_Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Goods" Relationship="Self.FK__Goods__t_ID__0BC6C43E" FromRole="Types" ToRole="Goods" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="u_ID" />
+          </Key>
+          <Property Name="u_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="u_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="u_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="u_Password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Orders__c_ID__182C9B23">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="c_ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="c_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__e_ID__1920BF5C">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="e_ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="e_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Goods__t_ID__0BC6C43E">
+          <End Role="Types" Type="Self.Types" Multiplicity="1" />
+          <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Types">
+              <PropertyRef Name="t_ID" />
+            </Principal>
+            <Dependent Role="Goods">
+              <PropertyRef Name="t_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderDetai__g_ID__1FCDBCEB">
+          <End Role="Goods" Type="Self.Goods" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goods">
+              <PropertyRef Name="g_ID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="g_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderDetai__o_ID__1ED998B2">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="o_ID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="o_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__p_Id__1A14E395">
+          <End Role="Payments" Type="Self.Payments" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payments">
+              <PropertyRef Name="p_Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="p_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WebShopEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customers" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" />
+          <EntitySet Name="Goods" EntityType="Self.Goods" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" />
+          <EntitySet Name="Payments" EntityType="Self.Payments" />
+          <EntitySet Name="Types" EntityType="Self.Types" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <AssociationSet Name="FK__Orders__c_ID__182C9B23" Association="Self.FK__Orders__c_ID__182C9B23">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__e_ID__1920BF5C" Association="Self.FK__Orders__e_ID__1920BF5C">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Goods__t_ID__0BC6C43E" Association="Self.FK__Goods__t_ID__0BC6C43E">
+            <End Role="Types" EntitySet="Types" />
+            <End Role="Goods" EntitySet="Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderDetai__g_ID__1FCDBCEB" Association="Self.FK__OrderDetai__g_ID__1FCDBCEB">
+            <End Role="Goods" EntitySet="Goods" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderDetai__o_ID__1ED998B2" Association="Self.FK__OrderDetai__o_ID__1ED998B2">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__p_Id__1A14E395" Association="Self.FK__Orders__p_Id__1A14E395">
+            <End Role="Payments" EntitySet="Payments" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WebShopModelStoreContainer" CdmEntityContainer="WebShopEntities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="WebShopModel.Customers">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="c_ID" ColumnName="c_ID" />
+                <ScalarProperty Name="c_Name" ColumnName="c_Name" />
+                <ScalarProperty Name="c_TrueName" ColumnName="c_TrueName" />
+                <ScalarProperty Name="c_Gender" ColumnName="c_Gender" />
+                <ScalarProperty Name="c_Birth" ColumnName="c_Birth" />
+                <ScalarProperty Name="c_CardID" ColumnName="c_CardID" />
+                <ScalarProperty Name="c_Address" ColumnName="c_Address" />
+                <ScalarProperty Name="c_Postcode" ColumnName="c_Postcode" />
+                <ScalarProperty Name="c_Mobile" ColumnName="c_Mobile" />
+                <ScalarProperty Name="c_Phone" ColumnName="c_Phone" />
+                <ScalarProperty Name="c_Email" ColumnName="c_Email" />
+                <ScalarProperty Name="c_Password" ColumnName="c_Password" />
+                <ScalarProperty Name="c_SafeCode" ColumnName="c_SafeCode" />
+                <ScalarProperty Name="c_Question" ColumnName="c_Question" />
+                <ScalarProperty Name="c_Answer" ColumnName="c_Answer" />
+                <ScalarProperty Name="c_Type" ColumnName="c_Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="WebShopModel.Employees">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="e_ID" ColumnName="e_ID" />
+                <ScalarProperty Name="e_Name" ColumnName="e_Name" />
+                <ScalarProperty Name="e_Gender" ColumnName="e_Gender" />
+                <ScalarProperty Name="e_Birth" ColumnName="e_Birth" />
+                <ScalarProperty Name="e_Address" ColumnName="e_Address" />
+                <ScalarProperty Name="e_Postcode" ColumnName="e_Postcode" />
+                <ScalarProperty Name="e_Mobile" ColumnName="e_Mobile" />
+                <ScalarProperty Name="e_Phone" ColumnName="e_Phone" />
+                <ScalarProperty Name="e_Email" ColumnName="e_Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Goods">
+            <EntityTypeMapping TypeName="WebShopModel.Goods">
+              <MappingFragment StoreEntitySet="Goods">
+                <ScalarProperty Name="g_ID" ColumnName="g_ID" />
+                <ScalarProperty Name="g_Name" ColumnName="g_Name" />
+                <ScalarProperty Name="t_ID" ColumnName="t_ID" />
+                <ScalarProperty Name="g_Price" ColumnName="g_Price" />
+                <ScalarProperty Name="g_Discount" ColumnName="g_Discount" />
+                <ScalarProperty Name="g_Number" ColumnName="g_Number" />
+                <ScalarProperty Name="g_ProduceDate" ColumnName="g_ProduceDate" />
+                <ScalarProperty Name="g_Image" ColumnName="g_Image" />
+                <ScalarProperty Name="g_Status" ColumnName="g_Status" />
+                <ScalarProperty Name="g_Description" ColumnName="g_Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="WebShopModel.OrderDetails">
+              <MappingFragment StoreEntitySet="OrderDetails">
+                <ScalarProperty Name="d_ID" ColumnName="d_ID" />
+                <ScalarProperty Name="o_ID" ColumnName="o_ID" />
+                <ScalarProperty Name="g_ID" ColumnName="g_ID" />
+                <ScalarProperty Name="d_Price" ColumnName="d_Price" />
+                <ScalarProperty Name="d_Number" ColumnName="d_Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="WebShopModel.Orders">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="o_ID" ColumnName="o_ID" />
+                <ScalarProperty Name="c_ID" ColumnName="c_ID" />
+                <ScalarProperty Name="o_Date" ColumnName="o_Date" />
+                <ScalarProperty Name="o_Sum" ColumnName="o_Sum" />
+                <ScalarProperty Name="e_ID" ColumnName="e_ID" />
+                <ScalarProperty Name="o_SendMode" ColumnName="o_SendMode" />
+                <ScalarProperty Name="p_Id" ColumnName="p_Id" />
+                <ScalarProperty Name="o_Status" ColumnName="o_Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="WebShopModel.Payments">
+              <MappingFragment StoreEntitySet="Payments">
+                <ScalarProperty Name="p_Id" ColumnName="p_Id" />
+                <ScalarProperty Name="p_Mode" ColumnName="p_Mode" />
+                <ScalarProperty Name="p_Remark" ColumnName="p_Remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Types">
+            <EntityTypeMapping TypeName="WebShopModel.Types">
+              <MappingFragment StoreEntitySet="Types">
+                <ScalarProperty Name="t_ID" ColumnName="t_ID" />
+                <ScalarProperty Name="t_Name" ColumnName="t_Name" />
+                <ScalarProperty Name="t_Description" ColumnName="t_Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="WebShopModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="u_ID" ColumnName="u_ID" />
+                <ScalarProperty Name="u_Name" ColumnName="u_Name" />
+                <ScalarProperty Name="u_Type" ColumnName="u_Type" />
+                <ScalarProperty Name="u_Password" ColumnName="u_Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

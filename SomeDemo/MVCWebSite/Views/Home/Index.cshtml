@@ -40,104 +40,47 @@
         </select>
     </p>
     <br />
-
     <a href="/Home/VisitWebServices">访问WebServices服务</a>
+    <p>
+        <input type="button" value="验证身份证号码" onclick="isCardNo('111111111111111111')" />
+    </p>
+    <p>
+        <input type="button" value="JQAjax的Data参数用匿名函数表示 " onclick="JQAjaxData()" />
+    </p>
+    <div>
+        <select id="select" onkeydown="Select.del(this,event)" onkeypress="Select.write(this,event)">
+            <option value=""></option>
+            <option value="aaa">aaa</option>
+            <option value="bbb">bbb</option>
+            <option value="ccc">ccc</option>
+        </select>
+        <input type="button" value="获取选择值" id="test" onclick="test();" />
+        <script>
+            var Select = {
+                del: function (obj, e) {
+                    if ((e.keyCode || e.which || e.charCode) == 8) {
+                        var opt = obj.options[0];
+                        opt.text = opt.value = opt.value.substring(0, opt.value.length > 0 ? opt.value.length - 1 : 0);
+                    }
+                },
+                write: function (obj, e) {
+                    if ((e.keyCode || e.which || e.charCode) == 8) return;
+                    var opt = obj.options[0];
+                    opt.selected = "selected";
+                    opt.text = opt.value += String.fromCharCode(e.charCode || e.which || e.keyCode);
+                }
+            }
+            function test() {
+                alert(document.getElementById("select").value);
+            }
+        </script><br />
+    </div>
+    <div>
+        <a href="/Home/CheckDouble">字符串类型的0.03转double还不行了？</a>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
 
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Plugin/jquery.editable-select.js"></script>
-<script>
-    function ReadXML() {
-        $.ajax({
-            url: "/Home/ReadXml",
-            type: "Post",
-            success: function (data) {
-                debugger
-                alert(data);
-            },
-            error: function () {
-                alert("服务器异常");
-            }
-        })
-    }
-
-
-    $('#editable-select').editableSelect({
-        effects: 'slide'
-    });
-
-    function editable(select1) {
-
-        if (select1.value == "") {
-
-            var newvalue = prompt("请输入", "其他");
-
-            if (newvalue) {
-
-                addSelected(select1, newvalue, newvalue);
-
-            }
-
-        }
-
-    }
-
-    function addSelected(fld1, value1, text1) {
-
-        if (document.all) {
-
-            var Opt = fld1.document.createElement("OPTION");
-
-            Opt.text = text1;
-
-            Opt.value = value1;
-
-            fld1.options.add(Opt);
-
-            Opt.selected = true;
-
-        } else {
-
-            var Opt = new Option(text1, value1, false, false);
-
-            Opt.selected = true;
-
-            fld1.options[fld1.options.length] = Opt;
-        }
-    }
-
-    //判断数组是否重复
-    $(function () {
-        var ary = new Array("111", "22", "33", "111","222","56656","22","33");
-        var nary = ary.sort();
-        for (var i = 0; i < ary.length; i++) {
-            if (nary[i] == nary[i + 1]) {
-                alert("数组重复内容：" + nary[i]);
-            }
-        }
-    })
-
-
-</script>
+<script src="~/Scripts/Home/index.js"></script>

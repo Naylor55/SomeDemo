@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layoutcml.cshtml";
+
+
+}
+@using Webdiyer.WebControls.Mvc
+@using MVCWebSite.Models
+@model PagedList<Goods>
+
+@*<script src=”http://code.jquery.com/jquery-1.6.4.min.js”></script>*@
+<script src="~/Scripts/jquery-1.9.1.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script>
+    function FormBegin() {
+        alert("123");
+        debugger
+        return false;
+    }
+    function FormSuccess(data) {
+        alert("123");
+        debugger
+        var cml = data;
+    }
+</script>
+
+<h2>测试Ajax.BeginForm</h2>
+
+@using (Ajax.BeginForm("GetSomeData", "Demo", new AjaxOptions { HttpMethod = "Post", OnBegin = "FormBegin", OnSuccess = "FormSuccess" }))
+{
+    <label>
+        编号：
+    </label>
+    <input type="text" id="id" name="id" />
+    <label>
+        名称：
+    </label>
+    <input type="text" id="name" name="name" />
+
+    <input type="submit" value="提交" />
+}
+
+
+<h4>MVCPager分页控件Demo</h4>
+
+<div id="articles">
+    @{ Html.RenderPartial("_MVCPager",Model); }
+</div>
+
+
+@{Html.RegisterMvcPagerScriptResource();}
