@@ -103,3 +103,5 @@ E:\Code\MyGithub\SomeDemo\SomeDemo\SomeDemo\MVCWebSite\bin\Webdiyer.MvcPager.dll
 E:\Code\MyGithub\SomeDemo\SomeDemo\SomeDemo\MVCWebSite\bin\Webdiyer.MvcPager.xml
 E:\Code\MyGithub\SomeDemo\SomeDemo\SomeDemo\MVCWebSite\bin\zh-CHS\Webdiyer.MvcPager.resources.dll
 E:\Code\MyGithub\SomeDemo\SomeDemo\SomeDemo\MVCWebSite\bin\zh-CHT\Webdiyer.MvcPager.resources.dll
+E:\Code\MyGithub\SomeDemo\SomeDemo\SomeDemo\MVCWebSite\bin\Microsoft.ApplicationInsights.TraceListener.dll
+E:\Code\MyGithub\SomeDemo\SomeDemo\SomeDemo\MVCWebSite\bin\Microsoft.ApplicationInsights.TraceListener.xml

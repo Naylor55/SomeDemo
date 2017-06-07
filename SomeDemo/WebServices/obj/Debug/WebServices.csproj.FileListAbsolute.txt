@@ -30,3 +30,4 @@ E:\Code\MyGithub\SomeDemo\SomeDemo\SomeDemo\WebServices\bin\Microsoft.Applicatio
 E:\Code\MyGithub\SomeDemo\SomeDemo\SomeDemo\WebServices\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\Code\MyGithub\SomeDemo\SomeDemo\SomeDemo\WebServices\obj\Debug\WebServices.dll
 E:\Code\MyGithub\SomeDemo\SomeDemo\SomeDemo\WebServices\obj\Debug\WebServices.pdb
+E:\Code\MyGithub\SomeDemo\SomeDemo\SomeDemo\WebServices\obj\Debug\WebServices.csprojResolveAssemblyReference.cache

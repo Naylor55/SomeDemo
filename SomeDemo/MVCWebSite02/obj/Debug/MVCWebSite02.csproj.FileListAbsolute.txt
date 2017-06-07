@@ -98,3 +98,4 @@ E:\Code\MyGithub\SomeDemo\SomeDemo\SomeDemo\MVCWebSite02\bin\zh-Hans\Microsoft.O
 E:\Code\MyGithub\SomeDemo\SomeDemo\SomeDemo\MVCWebSite02\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 E:\Code\MyGithub\SomeDemo\SomeDemo\SomeDemo\MVCWebSite02\obj\Debug\MVCWebSite02.dll
 E:\Code\MyGithub\SomeDemo\SomeDemo\SomeDemo\MVCWebSite02\obj\Debug\MVCWebSite02.pdb
+E:\Code\MyGithub\SomeDemo\SomeDemo\SomeDemo\MVCWebSite02\obj\Debug\MVCWebSite02.csprojResolveAssemblyReference.cache

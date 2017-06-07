@@ -2,15 +2,12 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layoutcml.cshtml";
-
-
 }
 @using Webdiyer.WebControls.Mvc
 @using MVCWebSite.Models
 @model PagedList<Goods>
 
-@*<script src=”http://code.jquery.com/jquery-1.6.4.min.js”></script>*@
-<script src="~/Scripts/jquery-1.9.1.js"></script>
+@*<script src="~/Scripts/jquery-1.9.1.js"></script>*@
 <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 <script>
     function FormBegin() {
@@ -45,7 +42,7 @@
 <h4>MVCPager分页控件Demo</h4>
 
 <div id="articles">
-    @{ Html.RenderPartial("_MVCPager",Model); }
+    @{ Html.RenderPartial("_MVCPager", Model); }
 </div>
 
 

@@ -3,7 +3,44 @@
 
 @model PagedList<Goods>
 
-@{ Html.RenderPartial("_MVCPagerItem"); }
+
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th class="nowrap">序号</th>
+        <th>
+            @Html.DisplayNameFor(model => model.g_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.g_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.g_Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.g_Image)
+        </th>
+    </tr>
+    @{ int i = 0;}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@(Model.StartItemIndex + i++)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.g_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.g_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.g_Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.g_Image)
+            </td>
+        </tr>
+    }
+</table>
 
 
 <div class="text-center">
