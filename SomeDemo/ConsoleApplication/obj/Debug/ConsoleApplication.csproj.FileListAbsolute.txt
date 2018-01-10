@@ -1,0 +1,6 @@
+C:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\bin\Debug\ConsoleApplication.exe.config
+C:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\bin\Debug\ConsoleApplication.exe
+C:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\bin\Debug\ConsoleApplication.pdb
+C:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\obj\Debug\ConsoleApplication.csprojResolveAssemblyReference.cache
+C:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\obj\Debug\ConsoleApplication.exe
+C:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\obj\Debug\ConsoleApplication.pdb
