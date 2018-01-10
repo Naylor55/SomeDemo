@@ -73,10 +73,10 @@ namespace ConsoleApplication
             #region  向TXT中写入字符串
 
             /*****01*****/
-            WriteStrToTxtUseFileStream(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss \t") + "陈浩楠");
+            WriteStrToTxtUseFileStream(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss \t") + "使用FileStream对象向TXT中追加字符串");
 
             /*****02*****/
-            WriteStrToTxtUseStreamWriter(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss \t") + "陈明亮");
+            WriteStrToTxtUseStreamWriter(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss \t") + "使用StreamWriter对象向TXT中追加字符串");
 
             #endregion
 
