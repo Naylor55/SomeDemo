@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<h2>异步发送邮件</h2>
+@using (Ajax.BeginForm("SendEmail", "Home", new AjaxOptions { HttpMethod = "Post", OnSuccess = "success" }))
+{
+    <p>
+        <label>邮件正文:</label><input type="text" name="emailcontent" />
+    </p>
+    <p>
+        <input  type="submit" value="发送" />
+    </p>
+    <p>
+        <label id="tip"></label>
+    </p>
+}
+
+
+
+
+
+<script>
+    function success(data) {
+        if (data) {
+            $("#tip").html(data);
+        }
+    }
+</script>

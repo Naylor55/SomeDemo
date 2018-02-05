@@ -102,20 +102,20 @@ namespace ConsoleApplication
 
             #region 郑
 
-            //ThreadMessage("Main Thread");
-            ////建立委托
-            //MyDelegate myDelegate = new MyDelegate(Hello);
-            ////建立Person对象
-            //Person person = new Person();
-            //person.Name = "Elva";
-            //person.Age = 27;
-            ////异步调用委托，输入参数对象person, 获取计算结果
-            //myDelegate.BeginInvoke("Leslie", new AsyncCallback(Completed), person);            
-            ////在启动异步线程后，主线程可以继续工作而不需要等待
-            //for (int n = 0; n < 6; n++)
-            //    Console.WriteLine("  Main thread do work!");
-            //Console.WriteLine("");
-            //Console.ReadKey();
+            ThreadMessage("Main Thread");
+            //建立委托
+            MyDelegate myDelegate = new MyDelegate(Hello);
+            //建立Person对象
+            Person person = new Person();
+            person.Name = "Elva";
+            person.Age = 27;
+            //异步调用委托，输入参数对象person, 获取计算结果
+            myDelegate.BeginInvoke("Leslie", new AsyncCallback(Completed), person);
+            //在启动异步线程后，主线程可以继续工作而不需要等待
+            for (int n = 0; n < 6; n++)
+                Console.WriteLine("  Main thread do work!");
+            Console.WriteLine("");
+            Console.ReadKey();
 
             #endregion
 
@@ -152,39 +152,39 @@ namespace ConsoleApplication
 
             #region 找出List和数组中的某列的所有值，然后求差异集
 
-            List<Student> user = new List<Student>() { 
-                new Student { Id = 1, Name = "陈明亮" }, 
-                new Student { Id = 2, Name = "陈亮" } };
-            Student[] usera = new Student[] { 
-                new Student { Id = 1, Name = "陈亮" },
-            };
+            //List<Student> user = new List<Student>() { 
+            //    new Student { Id = 1, Name = "陈明亮" }, 
+            //    new Student { Id = 2, Name = "陈亮" } };
+            //Student[] usera = new Student[] { 
+            //    new Student { Id = 1, Name = "陈亮" },
+            //};
 
-            int[] list = user.Select(a => a.Id).ToArray();
-            Console.WriteLine("获取list中的id列的所有值为：");
-            foreach (int item in list)
-            {
-                Console.WriteLine(item);
-            }
-            int[] array = usera.ToArray().Select(a => a.Id).ToArray();
-            Console.WriteLine("获取array中的id列的所有值为：");
-            foreach (int item in array)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("list中有的array中没有的【方法1】为：");
-            int[] diff = list.Except(array).ToArray();
-            foreach (int item in diff)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("list中有的array中没有的【方法2】为：");
-            foreach (Student item in user)
-            {
-                if (!array.Contains(item.Id))
-                {
-                    Console.WriteLine(item.Id);
-                }
-            }
+            //int[] list = user.Select(a => a.Id).ToArray();
+            //Console.WriteLine("获取list中的id列的所有值为：");
+            //foreach (int item in list)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //int[] array = usera.ToArray().Select(a => a.Id).ToArray();
+            //Console.WriteLine("获取array中的id列的所有值为：");
+            //foreach (int item in array)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine("list中有的array中没有的【方法1】为：");
+            //int[] diff = list.Except(array).ToArray();
+            //foreach (int item in diff)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine("list中有的array中没有的【方法2】为：");
+            //foreach (Student item in user)
+            //{
+            //    if (!array.Contains(item.Id))
+            //    {
+            //        Console.WriteLine(item.Id);
+            //    }
+            //}
 
 
             #endregion
