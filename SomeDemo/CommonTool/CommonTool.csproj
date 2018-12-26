@@ -43,7 +43,6 @@
     <Compile Include="BaseTool.cs" />
     <Compile Include="CookieTool.cs" />
     <Compile Include="DataCache.cs" />
-    <Compile Include="EmailTool.cs" />
     <Compile Include="HttpHelper.cs" />
     <Compile Include="IPTool.cs" />
     <Compile Include="ModelConvertHelper.cs" />
