@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<link rel="shortcut icon" href="#" />
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<h2>跨域请求；将后台返回的图片base64在浏览器中显示出来</h2>
+
+<button type="button" id="btn">请求图片 </button>
+<button type="button" id="btn02">跨域请求图片 </button>
+<br />
+<h4>请求到的图片为:</h4>
+<br />
+<img alt="图片" id="baseImg" title="图片" src="" />
+<script>
+    $(function () {
+        $("#btn").click(function () {
+            $.ajax({
+                url: "http://47.94.238.148/api/warehouse-service/warehouse/location/421/print",
+                type: "GET",
+                dataType: "json",
+                //在请求前在header中添加Authorization认证
+                beforeSend: function (XMLHttpRequest) {
+                    XMLHttpRequest.setRequestHeader("Authorization", "Bearer 72cce6bd-82d5-4111-977f-f527527b3fd7")
+                },
+                success: function (data) {
+                    debugger
+                    var baseStr = data.data;
+                    var imgSrc = "data:image/jpg;base64," + baseStr;
+                    $("#baseImg").attr("src", imgSrc);
+                }
+            });
+        });
+
+        //项目WebApplication：服务端。服务端使用 HttpContext.Response.AppendHeader("Access-Control-Allow-Origin", "*");   实现资源共享，解决跨域问题
+        //项目ASPDotNetMvc：客户端
+        $("#btn02").click(function () {
+            $.ajax({
+                url: "http://localhost:58226/home/test", //同解决方案下面的WebApplication项目
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    debugger
+                    console.log(data);
+                    alert(data);
+                }
+            });
+        });
+    })
+
+</script>
+

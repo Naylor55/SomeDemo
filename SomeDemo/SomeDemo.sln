@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication", "Conso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPDotNetMvc", "ASPDotNetMvc\ASPDotNetMvc.csproj", "{FEA4560F-87BC-4B11-9D95-6781CF595230}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{3CB398CE-262F-4584-A5C6-AD04F47D983F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{FEA4560F-87BC-4B11-9D95-6781CF595230}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEA4560F-87BC-4B11-9D95-6781CF595230}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEA4560F-87BC-4B11-9D95-6781CF595230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CB398CE-262F-4584-A5C6-AD04F47D983F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CB398CE-262F-4584-A5C6-AD04F47D983F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CB398CE-262F-4584-A5C6-AD04F47D983F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CB398CE-262F-4584-A5C6-AD04F47D983F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

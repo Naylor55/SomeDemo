@@ -84,3 +84,4 @@ E:\GithubCode\SomeDemo\SomeDemo\ASPDotNetMvc\obj\Debug\ASPDotNetMvc.csproj.CoreC
 E:\GithubCode\SomeDemo\SomeDemo\ASPDotNetMvc\obj\Debug\ASPDotNetMvc.csproj.CopyComplete
 E:\GithubCode\SomeDemo\SomeDemo\ASPDotNetMvc\obj\Debug\ASPDotNetMvc.dll
 E:\GithubCode\SomeDemo\SomeDemo\ASPDotNetMvc\obj\Debug\ASPDotNetMvc.pdb
+E:\GithubCode\SomeDemo\SomeDemo\ASPDotNetMvc\obj\Debug\ASPDotNetMvc.csprojAssemblyReference.cache
