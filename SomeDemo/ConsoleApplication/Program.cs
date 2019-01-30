@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -73,7 +75,6 @@ namespace ConsoleApplication
 
             #endregion
 
-
             #region  向TXT中写入字符串
 
             /*****01*****/
@@ -99,23 +100,22 @@ namespace ConsoleApplication
 
             #endregion
 
-
             #region 郑
 
-            ThreadMessage("Main Thread");
-            //建立委托
-            MyDelegate myDelegate = new MyDelegate(Hello);
-            //建立Person对象
-            Person person = new Person();
-            person.Name = "Elva";
-            person.Age = 27;
-            //异步调用委托，输入参数对象person, 获取计算结果
-            myDelegate.BeginInvoke("Leslie", new AsyncCallback(Completed), person);
-            //在启动异步线程后，主线程可以继续工作而不需要等待
-            for (int n = 0; n < 6; n++)
-                Console.WriteLine("  Main thread do work!");
-            Console.WriteLine("");
-            Console.ReadKey();
+            //ThreadMessage("Main Thread");
+            ////建立委托
+            //MyDelegate myDelegate = new MyDelegate(Hello);
+            ////建立Person对象
+            //Person person = new Person();
+            //person.Name = "Elva";
+            //person.Age = 27;
+            ////异步调用委托，输入参数对象person, 获取计算结果
+            //myDelegate.BeginInvoke("Leslie", new AsyncCallback(Completed), person);
+            ////在启动异步线程后，主线程可以继续工作而不需要等待
+            //for (int n = 0; n < 6; n++)
+            //    Console.WriteLine("  Main thread do work!");
+            //Console.WriteLine("");
+            //Console.ReadKey();
 
             #endregion
 
@@ -187,6 +187,127 @@ namespace ConsoleApplication
             //}
 
 
+            #endregion
+
+            #region 面试题
+            //List<Teacher> t = new List<Teacher>()
+            //{                
+            //    new Teacher(){
+            //        Id = 1,
+            //        Name = "张老师"
+            //    },
+            //    new Teacher(){
+            //        Id = 2,
+            //        Name = "陈老师"
+            //    },
+            //    new Teacher(){
+            //        Id = 3,
+            //        Name = "王老师"
+            //    },
+            //};
+
+            //List<Group> g = new List<Group>()
+            //{                
+            //    new Group(){
+            //        Id = 1,
+            //        Name = "VIP班"
+            //    },
+            //    new Group(){
+            //        Id = 2,
+            //        Name = "普通班"
+            //    },
+            //    new Group(){
+            //        Id = 3,
+            //        Name = "周末班"
+            //    },
+            //};
+            //List<Student> s = new List<Student>()
+            //{
+            //    new Student(){
+            //        SId=1,
+            //        SName="小明",
+            //        TeacherId=1,
+            //        GroupId=1
+            //    },
+            //    new Student(){
+            //        SId=2,
+            //        SName="小红",
+            //        TeacherId=2,
+            //        GroupId=2
+            //    },
+            //    new Student(){
+            //        SId=3,
+            //        SName="小白",
+            //        TeacherId=3,
+            //        GroupId=3
+            //    }
+            //};
+
+            //List<Result> rList = new List<Result>();
+            //foreach (Student sitem in s)
+            //{
+            //    int tid = sitem.TeacherId;
+            //    int gid = sitem.GroupId;
+            //    string sname = t.Where(a => a.Id == tid).FirstOrDefault().Name;
+            //    string gname = g.Where(a => a.Id == gid).FirstOrDefault().Name;
+            //    Result r = new Result() { TeacherName = sname, GroupName = gname, Num = 1 };
+            //    rList.Add(r);
+            //}
+
+            //foreach (Teacher item in t)
+            //{
+
+            //}
+
+
+
+
+            #endregion
+
+            #region 时间日期比较大小
+            //DateTime oldtime = Convert.ToDateTime("1900-01-01");
+            ////DateTime newtime = DateTime.Now;
+            ////DateTime newtime = Convert.ToDateTime("1900-01-01");
+            //DateTime newtime = Convert.ToDateTime("2017-10-10"); ;
+            //if (DateTime.Compare(oldtime, newtime) <= 0)
+            //{
+            //    Console.WriteLine("oldtime早于或等于newtime");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("oldtime晚于newtime");
+            //}
+            #endregion
+
+            #region 邮箱校验
+            //List<string> strlist = new List<string>();
+
+            //Regex r = new Regex("^\\s*([A-Za-z0-9_-]+(\\.\\w+)*@(\\w+\\.)+\\w{2,5})\\s*$");
+            //foreach (string item in strlist)
+            //{
+            //    if (!r.IsMatch(item))
+            //    {
+            //        Console.WriteLine(item + "     这个邮箱正则校验不通过。");
+            //    }
+            //}
+            #endregion
+
+            #region 列出当前进程
+            //List<string> processes = new List<string>();
+            //foreach (Process item in Process.GetProcesses())
+            //{
+            //    processes.Add(item.ProcessName);
+            //}
+            //foreach (var item in processes)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            //TestReferrenceParam();
+
+            #region 绝对值
+            absTest();
             #endregion
 
         }
@@ -282,6 +403,35 @@ namespace ConsoleApplication
             Console.WriteLine(message);
         }
 
+        static void TestReferrenceParam()
+        {
+            Dictionary<int, string> dicemail = new Dictionary<int, string>();
+            dicemail.Add(1, "cml");
+            UpdateReferrenceParam(dicemail);
+            foreach (KeyValuePair<int, string> item in dicemail)
+            {
+                int key = item.Key;
+                string value = item.Value;
+            }
+        }
+
+        private static void UpdateReferrenceParam(Dictionary<int, string> dicemail)
+        {
+            dicemail.Add(2, "hn");
+        }
+
+        private static void absTest()
+        {
+            //对负整数Convert        
+            int a = -105;
+            int b = Convert.ToInt32(-105);
+            //负数或者0求绝对值
+            int c = 0, d = -5;
+            int e = Math.Abs(c);
+            int f = Math.Abs(d);
+
+        }
+
     }
 
 
@@ -309,9 +459,36 @@ namespace ConsoleApplication
         }
     }
 
+    //public class Student
+    //{
+    //    public int Id;
+    //    public string Name;
+    //}
+
+    public class Teacher
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+
+    public class Group
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+
     public class Student
     {
-        public int Id;
-        public string Name;
+        public int SId { get; set; }
+        public string SName { get; set; }
+        public int TeacherId { get; set; }
+        public int GroupId { get; set; }
+    }
+
+    public class Result
+    {
+        public string TeacherName { get; set; }
+        public string GroupName { get; set; }
+        public int Num { get; set; }
     }
 }

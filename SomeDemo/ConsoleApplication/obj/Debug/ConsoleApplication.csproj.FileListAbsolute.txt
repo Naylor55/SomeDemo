@@ -4,3 +4,10 @@ C:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\bin\Debug\ConsoleAppl
 C:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\obj\Debug\ConsoleApplication.csprojResolveAssemblyReference.cache
 C:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\obj\Debug\ConsoleApplication.exe
 C:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\obj\Debug\ConsoleApplication.pdb
+D:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\bin\Debug\ConsoleApplication.exe.config
+D:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\bin\Debug\ConsoleApplication.exe
+D:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\bin\Debug\ConsoleApplication.pdb
+D:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\obj\Debug\ConsoleApplication.csprojAssemblyReference.cache
+D:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\obj\Debug\ConsoleApplication.csproj.CoreCompileInputs.cache
+D:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\obj\Debug\ConsoleApplication.exe
+D:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\obj\Debug\ConsoleApplication.pdb
