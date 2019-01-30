@@ -1,0 +1,2 @@
+E:\GithubCode\SomeDemo\SomeDemo\CommonTool\obj\Debug\CommonTool.csprojAssemblyReference.cache
+E:\GithubCode\SomeDemo\SomeDemo\CommonTool\obj\Debug\CommonTool.csproj.CoreCompileInputs.cache
