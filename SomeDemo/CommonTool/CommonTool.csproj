@@ -48,7 +48,6 @@
     <Compile Include="ModelConvertHelper.cs" />
     <Compile Include="NumToCHN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SessionTool.cs" />
     <Compile Include="VerifyCodeTool.cs" />
     <Compile Include="WebConfigManager.cs" />
   </ItemGroup>
