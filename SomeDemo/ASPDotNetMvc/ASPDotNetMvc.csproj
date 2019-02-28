@@ -128,7 +128,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+<<<<<<< HEAD
+    <Compile Include="Controllers\Default1Controller.cs" />
+=======
     <Compile Include="Controllers\AjaxRequestHtmlController.cs" />
+>>>>>>> f48b07b0cede12db67e057220ec1c8dae727f468
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImgBase64Controller.cs" />
     <Compile Include="Global.asax.cs">

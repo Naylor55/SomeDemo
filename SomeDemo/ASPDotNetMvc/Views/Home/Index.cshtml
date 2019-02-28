@@ -4,21 +4,84 @@
 }
 <script src="~/Scripts/jquery-1.8.2.min.js"></script>
 <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-<h2>异步发送邮件</h2>
+@*<h2>异步发送邮件</h2>
 @using (Ajax.BeginForm("SendEmail", "Home", new AjaxOptions { HttpMethod = "Post", OnSuccess = "success" }))
 {
     <p>
         <label>邮件正文:</label><input type="text" name="emailcontent" />
     </p>
     <p>
-        <input  type="submit" value="发送" />
+        <input type="submit" value="发送" />
     </p>
     <p>
         <label id="tip"></label>
     </p>
-}
+}*@
 
+<<<<<<< HEAD
+<br />
+<p>
+    <label>操作流程：</label>
+</p>
+<p>
+    1: 使用人保账号XX登录电商平台<br />
+    2：添加一个申请单<br />
+    3：来到这个页面操作订单的回传：其中参数中的userid为XX对应的SecrecyId
+</p>
+<br />
+<br />
+<h2>人保下订单接口测试</h2>
+<form method="post" action="http://localhost:12333/vip/CheckUsersForOrder">
+    <p>
+        <!--
+            {{providerorderurl=http://mall.66123123.com/Vip/CheckUsersForOrder}}token{piccgroup|yaoshuai03|姚帅|{"companyid":"0001","userphone":"18601186517","username":"姚帅","useraddress":"北京市西城区西长安街88号中国人保大厦","userid":"yaoshuai03","usertel":"","userEmail":"yaoshuai03@picc.com.cn","confirmEmail":"jituan-ruanhong@picc.com.cn","datetime":"2018-04-11 15:11:50","products":[{"manufactureName":"","measuringunitname":"支","producttypeName":"白板笔","num":"3","salesprice":"1.2800","marketprice":"1.50","brandid":"3","productDescript":"","brandName":"得力","productname":"得力6817易擦不留痕水性白板笔2.0mm（计价单位：支）红(10支/盒)","productId":"34539","producttypeid":"75"}],"companyname":"领先未来"}} 
+        -->
+        <label>url和参数:</label>
+        <textarea name="token" style="border: 1px solid #94BBE2; width: 1000px; height: 500px">piccgroup|0|姚帅|
+    {
+        "companyid":"0001",
+        "userphone":"18601186517",
+        "username":"管理呀un",
+        "useraddress":"北京市西城区西长安街88号中国人保大厦",
+        "userid":"0",
+        "usertel":"",
+        "userEmail":"yaoshuai03@picc.com.cn",
+        "confirmEmail":"jituan-ruanhong@picc.com.cn",
+        "datetime":"2018-04-11 15:11:50",
+        "products":
+        [
+            {
+                "manufactureName":"",
+                "measuringunitname":"支",
+                "producttypeName":"白板笔",
+                "num":"3",
+                "salesprice":"1.2800",
+                "marketprice":"1.50",
+                "brandid":"3",
+                "productDescript":"",
+                "brandName":"得力",
+                "productname":"得力6817易擦不留痕水性白板笔2.0mm（计价单位：支）红(10支/盒)",
+                "productId":"34539",
+                "producttypeid":"75"
+            }
+        ],
+        "companyname":"领先未来"
+    }
+        </textarea>
+    </p>
+    <p>
+        <button type="submit">发送</button>
+    </p>
+    <br>
+    <p>
+        备注：<br>
+        1:生成的新的订单的ordertime为json串（即参数）中的datetime。
+
+    </p>
+</form>
+=======
 <a href="/AjaxRequestHtml/index">使用ajax请求一个html页面</a>
+>>>>>>> f48b07b0cede12db67e057220ec1c8dae727f468
 
 
 
