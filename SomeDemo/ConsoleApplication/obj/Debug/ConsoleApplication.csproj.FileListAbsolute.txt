@@ -7,7 +7,7 @@ C:\Code\Naylor\GitHub\SomeDemo\SomeDemo\ConsoleApplication\obj\Debug\ConsoleAppl
 E:\GithubCode\SomeDemo\SomeDemo\ConsoleApplication\bin\Debug\ConsoleApplication.exe.config
 E:\GithubCode\SomeDemo\SomeDemo\ConsoleApplication\bin\Debug\ConsoleApplication.exe
 E:\GithubCode\SomeDemo\SomeDemo\ConsoleApplication\bin\Debug\ConsoleApplication.pdb
-E:\GithubCode\SomeDemo\SomeDemo\ConsoleApplication\obj\Debug\ConsoleApplication.csprojAssemblyReference.cache
 E:\GithubCode\SomeDemo\SomeDemo\ConsoleApplication\obj\Debug\ConsoleApplication.csproj.CoreCompileInputs.cache
 E:\GithubCode\SomeDemo\SomeDemo\ConsoleApplication\obj\Debug\ConsoleApplication.exe
 E:\GithubCode\SomeDemo\SomeDemo\ConsoleApplication\obj\Debug\ConsoleApplication.pdb
+E:\GithubCode\SomeDemo\SomeDemo\ConsoleApplication\obj\Debug\ConsoleApplication.csprojAssemblyReference.cache
