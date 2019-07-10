@@ -42,3 +42,4 @@ E:\GithubCode\SomeDemo\SomeDemo\WindowsForms\obj\Debug\WindowsForms.csproj.CoreC
 E:\GithubCode\SomeDemo\SomeDemo\WindowsForms\obj\Debug\WindowsForms.csproj.CopyComplete
 E:\GithubCode\SomeDemo\SomeDemo\WindowsForms\obj\Debug\WindowsForms.exe
 E:\GithubCode\SomeDemo\SomeDemo\WindowsForms\obj\Debug\WindowsForms.pdb
+E:\GithubCode\SomeDemo\SomeDemo\WindowsForms\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll

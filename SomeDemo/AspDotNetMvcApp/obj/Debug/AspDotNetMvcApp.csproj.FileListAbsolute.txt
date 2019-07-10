@@ -88,3 +88,9 @@ E:\GithubCode\SomeDemo\SomeDemo\AspDotNetMvcApp\obj\Debug\AspDotNetMvcApp.csproj
 E:\GithubCode\SomeDemo\SomeDemo\AspDotNetMvcApp\obj\Debug\AspDotNetMvcApp.csproj.CopyComplete
 E:\GithubCode\SomeDemo\SomeDemo\AspDotNetMvcApp\obj\Debug\ASPDotNetMvc.dll
 E:\GithubCode\SomeDemo\SomeDemo\AspDotNetMvcApp\obj\Debug\ASPDotNetMvc.pdb
+E:\GithubCode\SomeDemo\SomeDemo\AspDotNetMvcApp\bin\ICSharpCode.SharpZipLib.dll
+E:\GithubCode\SomeDemo\SomeDemo\AspDotNetMvcApp\bin\NPOI.dll
+E:\GithubCode\SomeDemo\SomeDemo\AspDotNetMvcApp\bin\NPOI.OOXML.dll
+E:\GithubCode\SomeDemo\SomeDemo\AspDotNetMvcApp\bin\NPOI.OpenXml4Net.dll
+E:\GithubCode\SomeDemo\SomeDemo\AspDotNetMvcApp\bin\NPOI.OpenXmlFormats.dll
+E:\GithubCode\SomeDemo\SomeDemo\AspDotNetMvcApp\bin\ICSharpCode.SharpZipLib.xml

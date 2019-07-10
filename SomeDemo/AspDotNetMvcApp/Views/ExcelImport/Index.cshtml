@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>ExcelImport</h2>
+
+
+@using (Html.BeginForm("ExcelImportInNPOIWay", "ExcelImport", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <h2>
+        订单信息导入
+    </h2>
+    <div>
+        <fieldset id="myfieldset">
+            <legend>excel模版格式 </legend><font color="red">导入的模板格式如下，若模板格式不正确，则相应的基站不能导入!</font><br />
+            <img src="http://www.cnblogs.com/http://www.cnblogs.com/Content/AdminImages/stationexceltemplate.png" />
+            <p style="color: Red; text-align: center;">@Html.ActionLink("下载模版", "GetFile")</p>
+        </fieldset>
+    </div>
+    <div style="margin-top: 20px;">
+        <fieldset id="myfieldset1">
+            <legend>批量信息导入</legend>
+            <p>
+                选择文件：
+                <input id="FileUpload" type="file" name="files" style="width: 250px; height: 24px;    background: White"  />
+            </p>
+            <p>
+                <input id="btnImport" type="submit" value="导入" style="width: 60px; height: 28px;" />
+            </p>
+            <p style="color: Red; text-align: center;">@ViewBag.error</p>
+        </fieldset>
+    </div>
+}
