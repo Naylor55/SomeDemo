@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using ASPDotNetMvc.Models;
 using ASPDotNetMvc.PublicClass;
 using System.Runtime.Remoting.Messaging;
+using System.Collections.Specialized;
 
 namespace ASPDotNetMvc.Controllers
 {
@@ -16,12 +17,16 @@ namespace ASPDotNetMvc.Controllers
 
         public ActionResult Index()
         {
+            NameValueCollection query = HttpContext.Request.QueryString;
+            string str = query.Get("code");
+            NameValueCollection querystr = HttpContext.Request.QueryString;
+            string str1 = querystr.Get("code");
             return View();
         }
 
         delegate int EmailDelegate(EmailModel em);
 
-     
+
 
         private static void SendComplited(IAsyncResult result)
         {

@@ -188,18 +188,80 @@ namespace ConsoleApplication
             #endregion
 
             #region 控制台应用单例模式运行
-            bool appIsRuning = false;
-            Mutex mutex = new Mutex(true, System.Diagnostics.Process.GetCurrentProcess().ProcessName, out appIsRuning);
-            if (!appIsRuning)
+            //bool appIsRuning = false;
+            //Mutex mutex = new Mutex(true, System.Diagnostics.Process.GetCurrentProcess().ProcessName, out appIsRuning);
+            //if (!appIsRuning)
+            //{
+            //    Console.WriteLine("应用已经在运行。");
+            //    Console.WriteLine("按任意键退出");
+            //    Console.ReadKey();
+            //    Environment.Exit(1);
+            //}
+            //string app = ConsoleSingleton.run();
+            //Console.WriteLine(app);
+            //Console.ReadLine();
+            #endregion
+
+            #region 生成随机数
+            //System.Random random = new System.Random((int)System.DateTime.Now.Ticks);
+            //var str = string.Concat(random.Next(10000001, 99999999));
+            #endregion
+
+
+            #region  List 去重
+            //List<string> list = new List<string> { "中性笔", "得力", "中性笔" };
+            //list = list.Distinct().ToList();
+            #endregion
+
+            #region  加密解密
+
+            //string key = "ABCDEFGHIJKLMNOP";
+            //string clearText = "欢迎访问www.tracefact.net";
+            //CryptoHelper helper = new CryptoHelper(key);
+            //string encryptedText = helper.Encrypt(clearText);
+            //Console.WriteLine(encryptedText);
+            //clearText = CryptoHelper.Decrypt(encryptedText, key);
+            //Console.WriteLine(clearText);
+
+            #endregion
+
+            #region   List的Contains
+
+            //List<string> list = new List<string>() {
+            //    "得力","得力1"
+            //};
+            //bool one = list.Contains("得力");
+
+            #endregion
+
+            #region TXT 去重
+            // 读取 txt        
+            //List<string> list = Tool.ReadTextFileToList(AppDomain.CurrentDomain.BaseDirectory + "\\dict.txt");
+            //Console.WriteLine("list的长度为：" + list.Count);
+            //Console.WriteLine("去重");
+            //List<string> list1 = list.Distinct().ToList();
+            //Console.WriteLine("list去重后的长度为：" + list1.Count);
+            //Console.WriteLine("去重后重新写入txt");
+            //foreach (string item in list1)
+            //{
+            //    WriteStrToTxtUseFileStream(item);
+            //}
+            //Console.WriteLine("去重后重新写入完毕");
+            //Console.Read();
+
+            #endregion
+
+            #region  字符串分词
+            string str = "陈明亮";
+            Console.WriteLine("关键字为：" + str);
+            List<string> list = Tool.ReadTextFileToList(AppDomain.CurrentDomain.BaseDirectory + "\\dict.txt");
+            List<string> data = Tool.FindSearchWords(str, ref list);
+            Console.WriteLine("匹配的结果为：");
+            data.ForEach(delegate (string s)
             {
-                Console.WriteLine("应用已经在运行。");
-                Console.WriteLine("按任意键退出");
-                Console.ReadKey();
-                Environment.Exit(1);
-            }
-            string app = ConsoleSingleton.run();
-            Console.WriteLine(app);
-            Console.ReadLine();
+                Console.WriteLine(s);
+            });
+            Console.Read();
             #endregion
 
         }
@@ -212,8 +274,8 @@ namespace ConsoleApplication
         {
             if (!string.IsNullOrWhiteSpace(str))
             {
-                string path = AppDomain.CurrentDomain.BaseDirectory + "log.txt";
-                byte[] bytes = Encoding.UTF8.GetBytes(str);
+                string path = AppDomain.CurrentDomain.BaseDirectory + "dict5.txt";
+                byte[] bytes = Encoding.UTF8.GetBytes(str + "\r\n");
                 if (File.Exists(path))
                 {
                     FileStream fs = null;

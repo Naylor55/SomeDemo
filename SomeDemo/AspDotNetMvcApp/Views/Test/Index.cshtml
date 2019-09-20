@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>测试中关村调用领先接口</h2>
+
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+
+<h5>Way：Ajax</h5>
+<br />
+<button onclick="test()">测试</button>
+<br />
+<hr />
+<br />
+<h5>Way：A</h5>
+<br />
+
+<a href="http://localhost:12333/Account/ZolAutoLogin?userName=6qN1bKIQyHwqxbdI17UowQ==" target="_blank" class="Goto"> 跳转本地 </a>
+
+<br />
+
+<a href="http://test.66123123.com:8082/Account/ZolAutoLogin?userName=6qN1bKIQyHwqxbdI17UowQ==" target="_blank" class="Goto"> 跳转测试环境 </a>
+
+<br />
+<hr />
+<br />
+
+<h5>Way：Form</h5>
+<br />
+<form action="http://localhost:12333/Account/ZolAutoLogin" method="post">
+    <input name="userName" value="6qN1bKIQyHwqxbdI17UowQ==" />    
+    <input type="submit" name="" value="提交" />
+</form>
+<br />
+<hr />
+<br />
+
+
+
+<script>
+    function test() {
+        $.ajax({
+            //url: "http://test.66123123.com:8082/Account/ZolAutoLogin",
+            url: "http://localhost:12333/Account/ZolAutoLogin",
+            data: { userName: "6qN1bKIQyHwqxbdI17UowQ==" },
+            type: "Post",
+            success: function (data) {
+                debugger
+                //window.location.href = "http://localhost:12333/Counter/CounterGoods";
+
+            },
+            error: function (XMLHttpRequest) {
+                debugger
+            }
+        })
+    }
+
+</script>
